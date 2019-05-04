@@ -3,14 +3,14 @@ from time import strftime
 from flask import Flask, render_template, flash, request
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from flask_wtf.recaptcha import RecaptchaField
+from config import SECRET_KEY, RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
 
 DEBUG = True
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config['SECRET_KEY'] = 'e657d3949722c1c3473c5704fd025f1d'
-
-RECAPTCHA_PUBLIC_KEY = "6Ld9yaEUAAAAAPOZ_ivD9Mwk85YdCmMyjRI_RxKC"
-RECAPTCHA_PRIVATE_KEY = "6Ld9yaEUAAAAAM5-vlSEfi913hKlTlTj58GslEkq"
+app.config['SECRET_KEY'] = SECRET_KEY
+app.config['RECAPTCHA_PUBLIC_KEY'] = RECAPTCHA_PUBLIC_KEY
+app.config['RECAPTCHA_PRIVATE_KEY'] = RECAPTCHA_PRIVATE_KEY
 
 
 class ReusableForm(Form):
