@@ -11,7 +11,7 @@ app.config.from_object(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['RECAPTCHA_PUBLIC_KEY'] = RECAPTCHA_PUBLIC_KEY
 app.config['RECAPTCHA_PRIVATE_KEY'] = RECAPTCHA_PRIVATE_KEY
-
+print("keys: {} {} {}".format(SECRET_KEY, RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY))
 
 class ReusableForm(Form):
     name = TextField('Name:', validators=[validators.required()])
