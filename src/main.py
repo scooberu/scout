@@ -1,7 +1,8 @@
 from random import randint
 from time import strftime
 from flask import Flask, render_template, flash, request
-from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, RecaptchaField
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from flask_wtf.recaptcha import RecaptchaField
 
 DEBUG = True
 app = Flask(__name__)
